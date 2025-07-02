@@ -1,0 +1,32 @@
+# Maven
+/target/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VS Code
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.*
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# Misc
+*.swp
+*~
+.qodo/

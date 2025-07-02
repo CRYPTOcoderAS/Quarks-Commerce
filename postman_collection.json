@@ -1,0 +1,131 @@
+{
+  "info": {
+    "_postman_id": "quarks-commerce-collection",
+    "name": "Quarks Commerce Inventory API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create User",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"testuser\",\n  \"email\": \"testuser@example.com\",\n  \"password\": \"password123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "users"]
+        }
+      }
+    },
+    {
+      "name": "Get User by Username",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/users/by-username/testuser",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "users", "by-username", "testuser"]
+        }
+      }
+    },
+    {
+      "name": "Get User by Email",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/users/by-email/testuser@example.com",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "users", "by-email", "testuser@example.com"]
+        }
+      }
+    },
+    {
+      "name": "Create Supply",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Sample Item\",\n  \"description\": \"A test item\",\n  \"price\": 99.99,\n  \"quantity\": 100\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/inventory/supply",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "inventory", "supply"]
+        }
+      }
+    },
+    {
+      "name": "Reserve Item (use valid userId)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"itemId\": 1,\n  \"quantity\": 2,\n  \"userId\": 1\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/inventory/reserve",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "inventory", "reserve"]
+        }
+      }
+    },
+    {
+      "name": "Cancel Reservation (use valid userId)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"reservationId\": 1,\n  \"userId\": 1\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/inventory/cancel",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "inventory", "cancel"]
+        }
+      }
+    },
+    {
+      "name": "Get Item Availability",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/inventory/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "inventory", "1"]
+        }
+      }
+    }
+  ]
+} 
